@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Simulador de Investimentos de Renda Fixa</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="text-center display-4 mt-5">Simulador de Investimentos de Renda Fixa</h1>
+        
+        <div class="mt-5">
+            <h3 class="mb-4">Inserir investimento</h3>
+
+            <form>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="tipoInvest">Tipo</label>
+                        <select class="custom-select" id="tipoInvest">
+                            <option>CDB</option>
+                            <option>LC</option>
+                            <option>LCI</option>
+                            <option>LCA</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="juros">Juros</label>
+                        <input type="number" step="0.01" id="juros" class="form-control" placeholder="0" required> 
+                    </div>
+                    <div class="col">
+                        <label for="tipoJuros">Pré/Pós</label>
+                        <select class="custom-select" id="tipoJuros">
+                            <option>do CDI</option>
+                            <option>a.a.</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="capital">Capital</label>
+                        <input type="number" step=".01" id="capital" class="form-control" placeholder="0" required>
+                    </div>
+                    <div class="col">
+                        <label for="periodo">Meses</label>
+                        <input type="number" id="periodo" class="form-control" placeholder="0" required>
+                    </div>
+                    <div class="col m-auto">
+                        <button type="submit" id="calcular" class="btn btn-primary">Calcular</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="mt-5">
+            <h3 class="mb-4">Investimentos cadastrados</h3>
+
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Juros</th>
+                    <th scope="col">Capital</th>
+                    <th scope="col">Periodo</th>
+                    <th scope="col">Montante</th>
+                    <th scope="col">IR</th>
+                    <th scope="col">Lucro</th>
+                  </tr>
+                </thead>
+                <tbody class="registros">
+                  <tr>
+                    <th class="rowId" scope="row">1</th>
+                    <td>CDB</td>
+                    <td>8% a.a.</td>
+                    <td>R$1000.00</td>
+                    <td>24 meses</td>
+                    <td>R$1166.00</td>
+                    <td>15%</td>
+                    <td>R$141.19</td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
